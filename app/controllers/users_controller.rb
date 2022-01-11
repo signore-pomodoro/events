@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:show]
+  # Задаем объект @user для шаблонов и экшенов
+  before_action :set_current_user, except: [:show]
   # GET /users/1 or /users/1.json
   def show
   end
@@ -31,5 +33,9 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :email)
+    end
+
+    def set_current_user
+      @user = current_user
     end
 end

@@ -10,6 +10,9 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'rails-ujs'
 gem 'sqlite3', '~> 1.4'
+gem 'i18n'
+gem 'devise-i18n'
+gem 'russian'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -35,6 +38,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
